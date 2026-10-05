@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEO Ranker — The SEO Specialist Game</title>
+  <meta name="description" content="Build the strategy. Grow the traffic. Own the rankings. SEO Ranker is a free, browser-based SEO strategy simulation game." />
+  <meta name="theme-color" content="#FFF3F6" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23E85D88'/%3E%3Cpath d='M14 44l12-12 8 8 16-18' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===================== START SCREEN ===================== -->
+  <section id="screen-start" class="screen active" aria-labelledby="start-title">
+    <div class="start-wrap">
+      <div class="start-copy">
+        <div class="brand-mark" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+        <p class="eyebrow">The SEO Specialist Game</p>
+        <h1 id="start-title" class="hero-title">SEO <span>RANKER</span></h1>
+        <p class="hero-tagline">Build the strategy. Grow the traffic. Own the rankings.</p>
+        <p class="hero-desc">You are the SEO strategist. You have 12 months to turn a struggling website into an organic growth machine.</p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" data-act="newGame"><i class="fa-solid fa-play" aria-hidden="true"></i> START NEW GAME</button>
+          <button class="btn btn-secondary btn-lg" id="btn-continue" data-act="continueGame"><i class="fa-solid fa-rotate-right" aria-hidden="true"></i> CONTINUE GAME</button>
+          <button class="btn btn-ghost btn-lg" data-act="howTo"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> HOW TO PLAY</button>
+        </div>
+        <p class="continue-hint" id="continue-hint" hidden></p>
+
+        <ul class="hero-points" aria-label="Game highlights">
+          <li><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> 12-month campaign</li>
+          <li><i class="fa-solid fa-bolt" aria-hidden="true"></i> 10 strategic actions</li>
+          <li><i class="fa-solid fa-chess" aria-hidden="true"></i> Living competitors &amp; events</li>
+          <li><i class="fa-solid fa-trophy" aria-hidden="true"></i> Missions &amp; achievements</li>
+        </ul>
+      </div>
+
+      <div class="start-visual" aria-hidden="true">
+        <div class="hero-card">
+          <div class="hc-top">
+            <span class="hc-dot"></span><span class="hc-dot"></span><span class="hc-dot"></span>
+            <span class="hc-url"><i class="fa-solid fa-magnifying-glass"></i> organic growth</span>
+          </div>
+          <svg viewBox="0 0 420 240" class="hero-svg" role="presentation">
+            <defs>
+              <linearGradient id="hg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E85D88" stop-opacity=".30"/><stop offset="1" stop-color="#E85D88" stop-opacity="0"/></linearGradient>
+              <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F7B7C8"/><stop offset="1" stop-color="#C94370"/></linearGradient>
+            </defs>
+            <g class="hs-grid"><line x1="20" x2="400" y1="40" y2="40"/><line x1="20" x2="400" y1="90" y2="90"/><line x1="20" x2="400" y1="140" y2="140"/><line x1="20" x2="400" y1="190" y2="190"/></g>
+            <g class="hs-bars">
+              <rect x="34" y="162" width="26" height="28" rx="6"/><rect x="82" y="148" width="26" height="42" rx="6"/>
+              <rect x="130" y="134" width="26" height="56" rx="6"/><rect x="178" y="116" width="26" height="74" rx="6"/>
+              <rect x="226" y="92" width="26" height="98" rx="6"/><rect x="274" y="66" width="26" height="124" rx="6"/>
+              <rect x="322" y="42" width="26" height="148" rx="6"/><rect x="370" y="22" width="26" height="168" rx="6"/>
+            </g>
+            <polygon points="47,150 95,132 143,112 191,96 239,70 287,48 335,28 383,10 383,190 47,190" fill="url(#hg1)"/>
+            <polyline class="hs-line" points="47,150 95,132 143,112 191,96 239,70 287,48 335,28 383,10" fill="none" stroke="url(#hg2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="383" cy="10" r="8" fill="#fff" stroke="#E85D88" stroke-width="4"/>
+          </svg>
+          <div class="hc-chip hc-chip-a"><i class="fa-solid fa-arrow-trend-up"></i> Traffic <strong>+248%</strong></div>
+          <div class="hc-chip hc-chip-b"><i class="fa-solid fa-star"></i> Position <strong>#3</strong></div>
+        </div>
+      </div>
+    </div>
+    <p class="start-disclaimer"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      SEO Ranker is an educational simulation. Rankings, traffic, AI visibility and SEO scores are fictional game mechanics and do not represent Google's actual ranking systems or real-world performance predictions.</p>
+  </section>
+
+  <!-- ===================== SETUP / ONBOARDING ===================== -->
+  <section id="screen-setup" class="screen" aria-label="Campaign setup">
+    <div class="setup-wrap" id="setup-root"></div>
+  </section>
+
+  <!-- ===================== GAME ===================== -->
+  <section id="screen-game" class="screen" aria-label="Game dashboard">
+    <header id="topbar" class="topbar"></header>
+    <div class="game-shell">
+      <nav id="sidenav" class="sidenav" aria-label="Game sections"></nav>
+      <main id="main" tabindex="-1"><div id="view"></div></main>
+    </div>
+    <nav id="bottomnav" class="bottomnav" aria-label="Game sections (mobile)"></nav>
+  </section>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <noscript><p style="padding:24px">SEO Ranker needs JavaScript to run.</p></noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/ranking.js"></script>
+  <script src="js/actions.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/missions.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
